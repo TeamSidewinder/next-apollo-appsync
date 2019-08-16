@@ -31,7 +31,7 @@ export default (appSyncConfig) => {
   
         // Run all GraphQL queries in the component tree
         // and extract the resulting data
-        const apollo = initApollo(null, appSyncConfig)
+        const apollo = initApollo(null, appSyncConfig, options)
         try {
           // create the url prop which is passed to every page
           const url = {
@@ -79,7 +79,7 @@ export default (appSyncConfig) => {
   
       constructor(props) {
         super(props)
-        this.apollo = initApollo(this.props.serverState.apollo.data, appSyncConfig)
+        this.apollo = initApollo(this.props.serverState.apollo.data, appSyncConfig, options)
       }
   
       render() {

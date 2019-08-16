@@ -8,11 +8,11 @@ if (!process.browser) {
   global.fetch = fetch
 }
 
-function create(initialState, appsyncConfig) {
+function create(initialState, appsyncConfig, options) {
   const client = new AWSAppSyncClient({
     ...appsyncConfig,
     disableOffline: true
-  }, {
+  }, options || {
       ssrMode: true
     });
   
